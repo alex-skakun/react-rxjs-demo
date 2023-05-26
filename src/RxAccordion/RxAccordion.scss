@@ -1,0 +1,48 @@
+.accordion {
+  display: flex;
+  flex-flow: column nowrap;
+  border: 1px solid #000;
+
+  .header {
+    flex: 0 0 30px;
+    display: flex;
+  }
+
+  .content {
+    flex: 1 1 auto;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    @media screen and (prefers-reduced-motion: no-preference) {
+      transition: height .2s ease;
+    }
+
+    .body {
+      border-top: 1px solid #000;
+      padding: 10px;
+    }
+  }
+
+  .toggle-button {
+    flex: 1 1 auto;
+    padding: 10px;
+    font-family: sans-serif;
+    cursor: pointer;
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+
+    &:not(:disabled) {
+      @media screen and (hover: hover) {
+        &:hover {
+          background-color: beige;
+        }
+      }
+
+      &:active {
+        background-color: bisque;
+      }
+    }
+  }
+}
